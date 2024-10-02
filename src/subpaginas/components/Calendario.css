@@ -15,10 +15,11 @@
 .navegacion {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Distribuye el espacio entre botones y el mes */
+    width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
     margin-bottom: 20px; /* Espaciado debajo de la navegación */
     animation: fadeIn 0.5s ease-in; /* Animación de entrada suave */
 }
-
 .tabla-calendario {
     border-collapse: collapse; /* Colapsa los bordes de la tabla */
     width: 100%; /* Ancho completo */
@@ -36,7 +37,9 @@
 }
 
 .botonescalendario {
-    margin: 15px;
+    width: 50px; /* Ancho fijo para los botones */
+    height: 40px; /* Altura fija para los botones */
+    margin: 0; /* Elimina el margen para que no afecte la distribución */
     transition: transform 0.2s, background-color 0.3s; /* Transiciones para botones */
 }
 
@@ -54,7 +57,7 @@
     }
 
     .calendario {
-        margin-top: 0%; /* Ajusta el margen superior según sea necesario */
+        margin-top: 5%; /* Ajusta el margen superior según sea necesario */
     }
 }
 
