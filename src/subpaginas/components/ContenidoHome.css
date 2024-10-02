@@ -1,7 +1,6 @@
 /* ContenidoHome.css */
 
 .contenido-home {
-    width: 100vw; /* Mantiene el contenido a lo largo del ancho de la ventana */
     margin: 0 auto;
     padding: 20px;
     animation: fadeIn 1s ease-in; /* Animación de entrada */
