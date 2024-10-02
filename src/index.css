@@ -24,6 +24,9 @@ a:hover {
 
 body {
   margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Oculta cualquier desbordamiento horizontal */
+  margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
