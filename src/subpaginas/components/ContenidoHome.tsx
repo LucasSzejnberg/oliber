@@ -1,9 +1,14 @@
-import './ContenidoHome.css';
+import './ContenidoHome.css'; 
 
 const ContenidoHome = () => {
   return (
     <div className="contenido-home">
       <h1 className="titulo">¡Agenda tu cita con Oliber!</h1>
+
+      {/* Botón para agendar cita */}
+      <div className="agendar-cita">
+        <button className="btn-agendar">¡Agendar cita!</button>
+      </div>
 
       <section className="descripcion">
         <h2>Descripción del servicio</h2>

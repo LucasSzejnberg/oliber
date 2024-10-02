@@ -1,11 +1,14 @@
 import Header from "./components/Header"
 import ContenidoHome from "./components/ContenidoHome";
+import Soporte from "./components/Soporte";
+
 const Home = () => {
     return (
         
       <div>
         <Header></Header>
         <ContenidoHome></ContenidoHome>
+        <Soporte></Soporte>
       </div>
     );
   };

@@ -1,0 +1,31 @@
+/* Estilos para el componente de soporte */
+.soporte {
+    background-color: #f1f1f1; /* Color de fondo claro */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Centrar el texto */
+    position: relative; /* Posicionamiento relativo */
+    bottom: 0; /* Asegura que esté en la parte inferior */
+    width: 100%; /* Ancho completo */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil en la parte superior */
+}
+
+.disclaimer {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    margin: 0; /* Sin margen */
+    color: #555; /* Color gris para el texto del disclaimer */
+}
+
+.contacto {
+    margin: 5px 0 0; /* Margen superior */
+    font-size: 1rem; /* Tamaño de fuente estándar */
+    color: #333; /* Color de texto más oscuro */
+}
+
+.contacto a {
+    color: #007BFF; /* Color azul para el enlace */
+    text-decoration: none; /* Sin subrayado en el enlace */
+}
+
+.contacto a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}

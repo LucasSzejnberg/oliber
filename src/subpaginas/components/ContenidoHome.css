@@ -1,7 +1,7 @@
 /* ContenidoHome.css */
 
 .contenido-home {
-    max-width: 100vw; /* Mantiene el contenido a lo largo del ancho de la ventana */
+    width: 100vw; /* Mantiene el contenido a lo largo del ancho de la ventana */
     margin: 0 auto;
     padding: 20px;
     animation: fadeIn 1s ease-in; /* Animación de entrada */
@@ -70,4 +70,28 @@ p {
     color: #555;
     line-height: 1.6;
     font-size: 1rem;
+}
+
+/* Estilos para el botón de agendar cita */
+.agendar-cita {
+    text-align: center; /* Centra el botón */
+    margin-top: 20px; /* Espacio arriba del botón */
+    margin-bottom: 30px; /* Espacio abajo del botón */
+}
+
+.btn-agendar {
+    padding: 15px 30px; /* Mayor espaciado dentro del botón */
+    font-size: 1.5rem; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Texto en negrita */
+    color: #fff; /* Color del texto */
+    background-color: #0037ff; /* Color de fondo del botón (naranja brillante) */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Bordes más redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves para el color y escala */
+}
+
+.btn-agendar:hover {
+    background-color: #0128b3; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Aumenta un poco el tamaño al pasar el mouse */
 }
