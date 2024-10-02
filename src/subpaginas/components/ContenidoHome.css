@@ -94,3 +94,32 @@ p {
     background-color: #0128b3; /* Color más oscuro al pasar el mouse */
     transform: scale(1.05); /* Aumenta un poco el tamaño al pasar el mouse */
 }
+
+/* Estilos específicos para dispositivos móviles */
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 2rem; /* Reduce el tamaño del título */
+    }
+
+    .contenido-home {
+        padding: 10px; /* Reduce el padding para móviles */
+    }
+
+    .descripcion, .quien-es, .por-que {
+        margin-bottom: 30px; /* Espaciado reducido entre secciones */
+        padding: 10px; /* Reduce el padding de las secciones */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Reduce el tamaño de los encabezados */
+    }
+
+    p {
+        font-size: 0.9rem; /* Reduce el tamaño de los párrafos */
+    }
+
+    .btn-agendar {
+        padding: 10px 20px; /* Reduce el espaciado dentro del botón */
+        font-size: 1.2rem; /* Tamaño de fuente más pequeño para el botón */
+    }
+}
