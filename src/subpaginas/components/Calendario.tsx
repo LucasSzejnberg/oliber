@@ -81,10 +81,11 @@ const Calendario: React.FC = () => {
 
     return (
         <div className="calendario">
+            <h2>Agendá tu turno ya</h2>
             <div className="navegacion">
-                <button onClick={() => cambiarMes(-1)}>&lt; Anterior</button>
+                <button className="botonescalendario" onClick={() => cambiarMes(-1)}>&lt; </button>
                 <h2>{fechaActual.toLocaleString('default', { month: 'long' })} {fechaActual.getFullYear()}</h2>
-                <button onClick={() => cambiarMes(1)}>Siguiente &gt;</button>
+                <button className="botonescalendario" onClick={() => cambiarMes(1)}> &gt;</button>
             </div>
             <table className="tabla-calendario">
                 {generarDiasDelMes()}

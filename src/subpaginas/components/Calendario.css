@@ -27,6 +27,10 @@
     transition: background-color 0.3s; /* Transición suave para el fondo */
 }
 
+.botonescalendario{
+    margin: 15px;
+}
+
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
     .dia {
@@ -45,7 +49,6 @@
     }
 
     .navegacion {
-        flex-direction: column; /* Apilar botones en pantallas pequeñas */
         align-items: center; /* Centrar elementos en la navegación */
     }
 }
