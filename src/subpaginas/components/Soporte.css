@@ -6,7 +6,7 @@
     position: relative; /* Posicionamiento relativo */
     bottom: 0; /* Asegura que esté en la parte inferior */
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil en la parte superior */
-    width: 95.8vw;
+    width: auto;
     animation: slideUp 0.5s ease-in-out; /* Animación al aparecer */
 }
 
