@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 10px; /* Añadido padding lateral para pantallas pequeñas */
 }
 
 .navegacion {
@@ -26,6 +27,23 @@
     transition: background-color 0.3s; /* Transición suave para el fondo */
 }
 
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .dia {
+        height: 60px; /* Altura reducida para pantallas más pequeñas */
+    }
+
+    .dia {
+        width: 14.2857%; /* Mantener ancho, pero puede ser necesario ajustar */
+    }
+
+    .navegacion {
+        flex-direction: column; /* Apilar botones en pantallas pequeñas */
+        align-items: center; /* Centrar elementos en la navegación */
+    }
+}
+
+/* Estilo para hover (solo en desktop) */
 .dia:hover {
     background-color: #e0e0e0; /* Color de fondo al pasar el mouse */
 }
