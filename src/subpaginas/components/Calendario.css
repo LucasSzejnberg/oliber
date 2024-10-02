@@ -1,9 +1,9 @@
 /* Calendario.css */
 .calendario {
+    margin-top: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px; /* Espaciado alrededor del calendario */
 }
 
 .navegacion {
