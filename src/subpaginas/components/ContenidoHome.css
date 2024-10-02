@@ -1,9 +1,11 @@
 /* ContenidoHome.css */
 
+/* Variables de diseño */
 :root {
     --header-height: 120px; /* Ajusta esta variable según la altura real de tu header */
 }
 
+/* Estilos generales para el contenido de la página */
 .contenido-home {
     margin: 0 auto;
     padding: 20px;
@@ -13,26 +15,12 @@
     margin-top: var(--header-height); /* Usa la variable para el margen superior */
 }
 
-/* Animación de desvanecimiento */
+/* Animaciones */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Estilo del título */
-.titulo {
-    text-align: center;
-    color: #333; /* Color más oscuro para el título */
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    animation: slideIn 0.8s ease-in-out; /* Animación de entrada */
-}
-
-/* Animación de desplazamiento */
 @keyframes slideIn {
     from {
         transform: translateY(-20px);
@@ -42,6 +30,15 @@
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+/* Estilos del título */
+.titulo {
+    text-align: center;
+    color: #333; /* Color más oscuro para el título */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: slideIn 0.8s ease-in-out; /* Animación de entrada */
 }
 
 /* Estilos para las secciones */
@@ -77,8 +74,7 @@ p {
 /* Estilos para el botón de agendar cita */
 .agendar-cita {
     text-align: center; /* Centra el botón */
-    margin-top: 20px; /* Espacio arriba del botón */
-    margin-bottom: 30px; /* Espacio abajo del botón */
+    margin: 20px 0 30px; /* Espaciado arriba y abajo del botón */
 }
 
 .btn-agendar {

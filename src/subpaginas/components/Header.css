@@ -11,6 +11,7 @@
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 40px;
+    animation: slideDown 0.5s ease-in; /* Animación de entrada */
 }
 
 /* Contenedor para alinear los elementos del header */
@@ -27,6 +28,11 @@
 .logo-img {
     width: 70px;
     height: auto;
+    transition: transform 0.3s ease; /* Transición para el logo */
+}
+
+.logo-img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del logo al pasar el mouse */
 }
 
 /* Estilos de navegación */
@@ -38,15 +44,24 @@
     padding: 0;
 }
 
+.nav-menu ul li {
+    transition: transform 0.2s ease; /* Transición para los elementos del menú */
+}
+
+.nav-menu ul li:hover {
+    transform: translateY(-3px); /* Eleva el elemento del menú al pasar el mouse */
+}
+
 .nav-menu ul li a {
     color: #007bff; /* Color azul para los enlaces */
     text-decoration: none;
     font-size: 18px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transiciones suaves para los enlaces */
 }
 
 .nav-menu ul li a:hover {
     color: #0056b3; /* Color más oscuro al pasar el mouse */
+    text-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra de texto al hacer hover */
 }
 
 /* Estilos de los botones de autenticación */
@@ -61,12 +76,13 @@
     border: 2px solid #007bff; /* Borde azul para los botones */
     color: #007bff; /* Texto azul para los botones */
     text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Transiciones para los botones */
 }
 
 .login-btn:hover {
     background-color: #007bff; /* Fondo azul en hover */
     color: white; /* Texto blanco al hacer hover */
+    transform: translateY(-3px); /* Eleva el botón al hacer hover */
 }
 
 .register-btn {
@@ -77,6 +93,7 @@
 .register-btn:hover {
     background-color: white; /* Fondo blanco en hover */
     color: #007bff; /* Texto azul en hover */
+    transform: translateY(-3px); /* Eleva el botón al hacer hover */
 }
 
 /* Media query para dispositivos móviles */
@@ -99,5 +116,17 @@
 
     .logo-img {
         width: 50px; /* Reduce el tamaño del logo en pantallas pequeñas */
+    }
+}
+
+/* Animaciones de entrada */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%); /* Comienza fuera de la vista */
+        opacity: 0; /* Comienza invisible */
+    }
+    to {
+        transform: translateY(0); /* Se desliza a su posición original */
+        opacity: 1; /* Se hace visible */
     }
 }
