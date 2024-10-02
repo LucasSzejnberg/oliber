@@ -1,8 +1,14 @@
-/* ContenidoHome.css */
+/* ContenidoHome.css */ 
 
 /* Variables de diseño */
 :root {
     --header-height: 120px; /* Ajusta esta variable según la altura real de tu header */
+    --color-principal: #ffb6c1; /* Rosa claro romántico */
+    --color-secundario: #ff69b4; /* Rosa intenso */
+    --color-texto: #800080; /* Morado para el texto */
+    --color-fondo: #ffe4e1; /* Fondo color melocotón suave */
+    --color-boton: #ff1493; /* Botón de color fucsia */
+    --color-hover-boton: #c71585; /* Color de botón en hover */
 }
 
 /* Estilos generales para el contenido de la página */
@@ -10,9 +16,10 @@
     margin: 0 auto;
     padding: 20px;
     animation: fadeIn 1s ease-in; /* Animación de entrada */
-    background-color: #f9f9f9; /* Color de fondo claro */
-    border-radius: 8px; /* Bordes redondeados */
-    margin-top: var(--header-height); /* Usa la variable para el margen superior */
+    background-color: var(--color-fondo); /* Color de fondo melocotón */
+    border-radius: 15px; /* Bordes más redondeados para un aspecto suave */
+    margin-top: 5%; /* Usa la variable para el margen superior */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
 }
 
 /* Animaciones */
@@ -35,40 +42,47 @@
 /* Estilos del título */
 .titulo {
     text-align: center;
-    color: #333; /* Color más oscuro para el título */
-    font-size: 2.5rem;
+    color: var(--color-texto); /* Color morado para el título */
+    font-size: 2.8rem;
     margin-bottom: 20px;
     animation: slideIn 0.8s ease-in-out; /* Animación de entrada */
+    font-family: 'Cursive', sans-serif; /* Tipografía más romántica */
+    letter-spacing: 2px; /* Espaciado entre letras */
 }
 
 /* Estilos para las secciones */
 .descripcion, .quien-es, .por-que {
-    margin-bottom: 40px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    margin: 0 auto 30px auto; /* Centra el rectángulo horizontalmente */
+    padding: 12px; /* Padding reducido */
+    border: 2px solid var(--color-secundario); /* Borde rosa intenso */
+    border-radius: 10px; /* Bordes más pequeños */
     background-color: white; /* Fondo blanco para las secciones */
-    transition: transform 0.3s ease; /* Suaviza el efecto de escalado */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza el efecto de escalado */
+    width: 90%; /* Ajusta el ancho */
 }
+
+
 
 .descripcion:hover,
 .quien-es:hover,
 .por-que:hover {
-    transform: scale(1.02); /* Escala al pasar el mouse */
+    transform: scale(1.02); /* Escala más pequeña al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra suave en hover */
 }
 
 /* Estilo de los encabezados */
 h2 {
-    color: #007bff; /* Color azul para los títulos */
+    color: var(--color-secundario); /* Color rosa intenso para los títulos */
     margin-bottom: 10px;
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Tamaño del texto reducido */
+    font-family: 'Cursive', sans-serif;
 }
 
 /* Estilo de los párrafos */
 p {
-    color: #555;
+    color: var(--color-texto); /* Texto en morado */
     line-height: 1.6;
-    font-size: 1rem;
+    font-size: 1rem; /* Texto un poco más pequeño */
 }
 
 /* Estilos para el botón de agendar cita */
@@ -78,42 +92,43 @@ p {
 }
 
 .btn-agendar {
-    padding: 15px 30px; /* Mayor espaciado dentro del botón */
-    font-size: 1.5rem; /* Tamaño de fuente más grande */
+    padding: 12px 30px; /* Espaciado reducido dentro del botón */
+    font-size: 1.4rem; /* Tamaño de fuente más pequeño */
     font-weight: bold; /* Texto en negrita */
     color: #fff; /* Color del texto */
-    background-color: #0037ff; /* Color de fondo del botón */
+    background-color: var(--color-boton); /* Color romántico del botón */
     border: none; /* Sin borde */
-    border-radius: 10px; /* Bordes más redondeados */
+    border-radius: 15px; /* Bordes más redondeados */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
     transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves para el color y escala */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para el botón */
 }
 
 .btn-agendar:hover {
-    background-color: #0128b3; /* Color más oscuro al pasar el mouse */
-    transform: scale(1.05); /* Aumenta un poco el tamaño al pasar el mouse */
+    background-color: var(--color-hover-boton); /* Color más oscuro al pasar el mouse */
+    transform: scale(1.08); /* Aumenta el tamaño al pasar el mouse */
 }
 
 /* Estilos específicos para dispositivos móviles */
 @media (max-width: 768px) {
     .titulo {
-        font-size: 2rem; /* Reduce el tamaño del título */
+        font-size: 2.2rem; /* Reduce el tamaño del título */
     }
 
     .contenido-home {
-        margin-top: var(--header-height); /* Asegura que esté por debajo del header */
+        margin-top: 10%; /* Asegura que esté por debajo del header */
     }
 
     .descripcion, .quien-es, .por-que {
-        margin-bottom: 30px; /* Espaciado reducido entre secciones */
+        margin-bottom: 25px; /* Espaciado reducido entre secciones */
     }
 
     h2 {
-        font-size: 1.5rem; /* Reduce el tamaño de los encabezados */
+        font-size: 1.6rem; /* Reduce el tamaño de los encabezados */
     }
 
     p {
-        font-size: 0.9rem; /* Reduce el tamaño de los párrafos */
+        font-size: 1rem; /* Reduce el tamaño de los párrafos */
     }
 
     .btn-agendar {

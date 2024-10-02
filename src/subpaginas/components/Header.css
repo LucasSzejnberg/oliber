@@ -6,10 +6,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #ffffff; /* Fondo blanco para un aspecto limpio */
-    color: #333; /* Texto oscuro para buen contraste */
+    background-color: #fce4ec; /* Fondo rosa suave para un toque romántico */
+    color: #880e4f; /* Texto en un tono burdeos oscuro */
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(136, 14, 79, 0.2); /* Sombra con tono burdeos */
     margin-bottom: 40px;
     animation: slideDown 0.5s ease-in; /* Animación de entrada */
 }
@@ -52,46 +52,47 @@
 }
 
 .nav-menu ul li a {
-    color: #007bff; /* Color azul para los enlaces */
+    color: #d81b60; /* Color rosa oscuro para los enlaces */
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s ease, text-shadow 0.3s ease; /* Transiciones suaves para los enlaces */
 }
 
 .nav-menu ul li a:hover {
-    color: #0056b3; /* Color más oscuro al pasar el mouse */
-    text-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra de texto al hacer hover */
+    color: #ad1457; /* Rosa más oscuro al pasar el mouse */
+    text-shadow: 0 0 5px rgba(216, 27, 96, 0.5); /* Sombra de texto en rosa */
 }
 
 /* Estilos de los botones de autenticación */
 .auth-buttons {
     display: flex;
     gap: 10px;
+    align-items: center; /* Centrar verticalmente los botones */
 }
 
 .login-btn, .register-btn {
     padding: 10px 20px;
     border-radius: 25px;
-    border: 2px solid #007bff; /* Borde azul para los botones */
-    color: #007bff; /* Texto azul para los botones */
+    border: 2px solid #d81b60; /* Borde rosa oscuro */
+    color: #d81b60; /* Texto rosa oscuro */
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Transiciones para los botones */
 }
 
 .login-btn:hover {
-    background-color: #007bff; /* Fondo azul en hover */
+    background-color: #d81b60; /* Fondo rosa oscuro en hover */
     color: white; /* Texto blanco al hacer hover */
     transform: translateY(-3px); /* Eleva el botón al hacer hover */
 }
 
 .register-btn {
-    background-color: #007bff; /* Fondo azul para el botón de registro */
+    background-color: #d81b60; /* Fondo rosa oscuro para el botón de registro */
     color: white; /* Texto blanco */
 }
 
 .register-btn:hover {
     background-color: white; /* Fondo blanco en hover */
-    color: #007bff; /* Texto azul en hover */
+    color: #d81b60; /* Texto rosa en hover */
     transform: translateY(-3px); /* Eleva el botón al hacer hover */
 }
 
@@ -109,6 +110,12 @@
     .auth-buttons {
         margin-top: 10px;
         justify-content: flex-start;
+    }
+
+    /* Reducir el tamaño de los botones en móviles */
+    .login-btn, .register-btn {
+        padding: 5px 10px; /* Botones más pequeños */
+        font-size: 14px; /* Tamaño de fuente más pequeño */
     }
 
     .logo-img {
