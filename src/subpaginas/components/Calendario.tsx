@@ -1,10 +1,12 @@
 // Calendario.tsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Calendario.css'; // Asegúrate de tener estilos para el calendario
+import { useFechaContext } from './FechaContext'; // Importa el hook de contexto
+import './Calendario.css';
 
 const Calendario: React.FC = () => {
     const navigate = useNavigate();
+    const { setFechaSeleccionada } = useFechaContext(); // Obtén la función para establecer la fecha
     const [fechaActual, setFechaActual] = useState<Date>(new Date());
 
     const cambiarMes = (direccion: number) => {
@@ -23,7 +25,11 @@ const Calendario: React.FC = () => {
                 <td 
                     key={i} 
                     className="dia" 
-                    onClick={() => navigate('/nuevoturno')}
+                    onClick={() => {
+                        const fechaElegida = new Date(fechaActual.getFullYear(), fechaActual.getMonth(), i);
+                        setFechaSeleccionada(fechaElegida); // Establecer la fecha seleccionada
+                        navigate('/nuevoturno');
+                    }}
                 >
                     {i}
                 </td>
