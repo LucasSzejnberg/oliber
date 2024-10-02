@@ -1,5 +1,9 @@
 /* ContenidoHome.css */
 
+:root {
+    --header-height: 80px; /* Ajusta esta variable según la altura real de tu header */
+}
+
 .contenido-home {
     margin: 0 auto;
     padding: 20px;
@@ -7,7 +11,7 @@
     background-color: #f9f9f9; /* Color de fondo claro */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    margin-top: 80px; /* Añade margen superior igual o mayor a la altura del header */
+    margin-top: var(--header-height); /* Usa la variable para el margen superior */
 }
 
 /* Animación de desvanecimiento */
@@ -83,7 +87,7 @@ p {
     font-size: 1.5rem; /* Tamaño de fuente más grande */
     font-weight: bold; /* Texto en negrita */
     color: #fff; /* Color del texto */
-    background-color: #0037ff; /* Color de fondo del botón (naranja brillante) */
+    background-color: #0037ff; /* Color de fondo del botón */
     border: none; /* Sin borde */
     border-radius: 10px; /* Bordes más redondeados */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
@@ -103,6 +107,7 @@ p {
 
     .contenido-home {
         padding: 10px; /* Reduce el padding para móviles */
+        margin-top: var(--header-height); /* Asegura que esté por debajo del header */
     }
 
     .descripcion, .quien-es, .por-que {
