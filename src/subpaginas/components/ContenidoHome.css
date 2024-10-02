@@ -101,13 +101,11 @@ p {
     }
 
     .contenido-home {
-        padding: 10px; /* Reduce el padding para móviles */
         margin-top: var(--header-height); /* Asegura que esté por debajo del header */
     }
 
     .descripcion, .quien-es, .por-que {
         margin-bottom: 30px; /* Espaciado reducido entre secciones */
-        padding: 10px; /* Reduce el padding de las secciones */
     }
 
     h2 {
