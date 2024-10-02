@@ -4,6 +4,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 90%; /* Ancho del contenedor del calendario */
+    max-width: 800px; /* Ancho máximo para el contenedor */
+    margin-left: auto; /* Centrar horizontalmente */
+    margin-right: auto; /* Centrar horizontalmente */
     padding: 0 10px; /* Añadido padding lateral para pantallas pequeñas */
 }
 
@@ -20,7 +24,7 @@
 }
 
 .dia {
-    width: 14.2857%; /* 100% dividido por 7 días de la semana */
+    width: calc(100% / 7); /* 100% dividido por 7 días de la semana */
     height: 100px; /* Altura fija para cada celda */
     text-align: center; /* Centra el texto */
     border: 1px solid #7b7b7b; /* Borde gris claro */
@@ -45,22 +49,11 @@
 @media (max-width: 768px) {
     .dia {
         height: 60px; /* Altura reducida para pantallas más pequeñas */
-    }
-
-    .dia {
-        width: 14.2857%; /* Mantener ancho, pero puede ser necesario ajustar */
+        width: calc(100% / 7); /* Mantener ancho, pero puede ser necesario ajustar */
     }
 
     .calendario {
-        margin-top: 30%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0 10px; /* Añadido padding lateral para pantallas pequeñas */
-    }
-
-    .navegacion {
-        align-items: center; /* Centrar elementos en la navegación */
+        margin-top: 30%; /* Ajusta el margen superior según sea necesario */
     }
 }
 
@@ -93,4 +86,14 @@
 
 .dia.vacio {
     background-color: transparent; /* Celdas vacías sin color de fondo */
+}
+
+/* Añadir esto en tu CSS */
+.calendario-container1 {
+   align-content: center;
+   align-self: center;
+   align-items: center;
+   margin-left: auto;
+   margin-right: auto;
+   width: 100vw;
 }

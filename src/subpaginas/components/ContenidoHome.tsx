@@ -1,13 +1,21 @@
-import './ContenidoHome.css'; 
+import { useNavigate } from 'react-router-dom'; // Importar useNavigate
+import './ContenidoHome.css';
 
 const ContenidoHome = () => {
+  const navigate = useNavigate(); // Crear la función de navegación
+
+  // Función para manejar el clic en el botón
+  const handleAgendarCita = () => {
+    navigate('/turnos'); // Navegar a la ruta /turnos
+  };
+
   return (
     <div className="contenido-home">
       <h1 className="titulo">¡Agenda tu cita con Oliber!</h1>
 
       {/* Botón para agendar cita */}
       <div className="agendar-cita">
-        <button className="btn-agendar">¡Agendar cita!</button>
+        <button className="btn-agendar" onClick={handleAgendarCita}>¡Agendar cita!</button>
       </div>
 
       <section className="descripcion">
