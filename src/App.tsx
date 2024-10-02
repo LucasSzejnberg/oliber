@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from "./subpaginas/Home.tsx";
-import InicioSesion from "./subpaginas/InicioSesion.tsx";
+import Turnos from "./subpaginas/Turnos.tsx";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/2" element={<InicioSesion />} />
+        <Route path="/Turnos" element={<Turnos />} />
 
       </Routes>
     </Router>
