@@ -98,6 +98,6 @@
     }
 
     .logo-img {
-        width: 120px; /* Reduce el tamaño del logo en pantallas pequeñas */
+        width: 50px; /* Reduce el tamaño del logo en pantallas pequeñas */
     }
 }
