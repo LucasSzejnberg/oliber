@@ -11,6 +11,8 @@
     border-radius: 15px; /* Bordes redondeados para suavizar el diseño */
     font-family: 'Cursive', sans-serif; /* Tipografía romántica */
     color: #800080; /* Color morado para el texto */
+    margin-top: auto;
+    align-self: flex-end;
 }
 
 /* Animación de deslizamiento hacia arriba */
