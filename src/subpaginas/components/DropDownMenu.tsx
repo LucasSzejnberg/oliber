@@ -1,5 +1,5 @@
 import React from 'react';
-import './DropdownMenu.css'; // Archivo CSS para los estilos
+import './DropDownMenu.css'; // Archivo CSS para los estilos
 
 interface DropdownMenuProps {
   onLogout: () => void;
