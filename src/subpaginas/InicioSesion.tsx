@@ -1,7 +1,14 @@
+import Header from "./components/Header"
+import Soporte from "./components/Soporte";
+import ContenidoLogIn from "./components/ContenidoLogIn";
+
 const Home = () => {
     return (
+        
       <div>
-        <h1>Homdafeffe Page</h1>
+        <Header></Header>
+        <ContenidoLogIn></ContenidoLogIn>
+        <Soporte></Soporte>
       </div>
     );
   };

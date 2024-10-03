@@ -1,0 +1,157 @@
+/* Contenedor principal del login */
+.login-container1 {
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+    height: 100vh;            /* Ocupa toda la pantalla */
+    background-color: #FFE4E1; /* Fondo romántico */
+    animation: fadeInBackground1 1.5s ease-in-out;
+    padding: 20px; /* Para agregar un pequeño espacio en los bordes en pantallas más pequeñas */
+}
+
+/* Estilos del formulario */
+.login-form1 {
+    background-color: #FFF0F5; /* Fondo suave para el formulario */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    width: 100vw;              /* Ocupa el 100% del contenedor */
+    max-width: 91vw;          /* Máximo ancho fijo */
+    animation: slideIn1 1s ease-in-out;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Animación de entrada para el formulario */
+@keyframes slideIn1 {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Título del formulario */
+.login-form1 h2 {
+    color: #B22222; /* Rojo oscuro romántico */
+    font-family: 'Cursive', sans-serif;
+    margin-bottom: 20px;
+    animation: fadeInText1 1.2s ease-in-out;
+}
+
+/* Animación de entrada suave para el texto */
+@keyframes fadeInText1 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilo de los inputs */
+.form-group1 {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group1 label {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #8B0000; /* Rojo oscuro */
+    animation: fadeInLabel1 1s ease-in-out;
+}
+
+.form-group1 input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #E6E6FA; /* Borde romántico */
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    animation: inputFocus1 0.5s ease-in-out;
+    transition: all 0.3s;
+}
+
+/* Animación de entrada de los inputs */
+@keyframes inputFocus1 {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Efecto hover y foco para los inputs */
+.form-group1 input:focus {
+    border-color: #FF69B4; /* Rosa al enfocarse */
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+    outline: none;
+}
+
+/* Redirección al registro */
+.register-redirect1 {
+    margin: 10px 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #B22222;
+}
+
+.register-redirect1 span {
+    color: #FF1493; /* Rosa intenso */
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.register-redirect1 span:hover {
+    color: #FF69B4; /* Rosa más suave */
+}
+
+/* Botón de confirmar */
+.login-button1 {
+    background-color: #FF69B4; /* Rosa vibrante */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    animation: buttonPulse1 1s infinite alternate;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Animación de latido para el botón */
+@keyframes buttonPulse1 {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+/* Hover del botón de confirmar */
+.login-button1:hover {
+    background-color: #FF1493;
+    transform: scale(1.1);
+}
+
+/* Animación de fondo */
+@keyframes fadeInBackground1 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

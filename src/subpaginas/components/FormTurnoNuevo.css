@@ -34,7 +34,6 @@ form {
     background-color: #FFF0F5; /* Lavanda suave */
     border-radius: 10px;
     padding: 20px;
-    max-width: 90vw; /* Ajuste para móviles */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in-out;
     margin: 5% auto;
@@ -53,6 +52,7 @@ label {
 .contenidoformturno {
     margin-top: 10%;
     width: 100vw;
+    margin-right: auto;
 }
 
 .form-group {
@@ -219,7 +219,8 @@ form button[type="button"]:hover {
     }
 
     form{
-        max-width: 80vw;
+        max-width: 76vw;
+
     }
     label {
         font-size: 14px;

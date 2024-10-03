@@ -3,7 +3,7 @@ import Home from "./subpaginas/Home.tsx";
 import Turnos from "./subpaginas/Turnos.tsx";
 import { FechaProvider } from './subpaginas/components/FechaContext';
 import TurnoNuevo from './subpaginas/TurnoNuevo'; // Asegúrate de importar TurnoNuevo
-
+import InicioSesion from "./subpaginas/InicioSesion.tsx"
 function App() {
   return (
     <FechaProvider>
@@ -13,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Turnos" element={<Turnos />} />
         <Route path="/NuevoTurno" element={<TurnoNuevo />} />
+        <Route path="/login" element={<InicioSesion />} />
 
       </Routes>
     </Router>
