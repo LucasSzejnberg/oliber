@@ -1,0 +1,139 @@
+/* FormTurnoNuevo.css */
+
+/* Animaciones de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Contenedor del formulario */
+form {
+    background-color: #FFF0F5; /* Lavanda suave */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 80vw;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    align-self: center;
+    margin-left: 10%;
+}
+
+/* Estilo de etiquetas */
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-family: 'Cursive', sans-serif; /* Fuente cursiva para un toque romántico */
+    color: #B22222; /* Rojo oscuro */
+    animation: fadeIn 0.6s ease-in-out;
+}
+.contenidoformturno{
+    width: 100vw;
+}
+
+/* Estilo de inputs y selectores */
+input[type="date"],
+input[type="time"],
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #E6E6FA; /* Color gris claro */
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    animation: popIn 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.margentop{
+    margin-top: 10%;
+}
+
+/* Animación de foco para inputs */
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #FF69B4; /* Cambia a rosa cuando se selecciona */
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+/* Estilo de textarea */
+textarea {
+    resize: vertical; /* Permitir solo el cambio de tamaño vertical */
+    min-height: 80px;
+    animation: popIn 0.6s ease-in-out;
+}
+
+/* Estilo de los botones */
+button {
+    background-color: #FF69B4; /* Rosa intenso */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+/* Hover effects para botones */
+button:hover {
+    background-color: #FF1493; /* Rosa más oscuro */
+    transform: scale(1.1); /* Crece un poco al pasar el mouse */
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.7); /* Resplandor rosa */
+}
+
+/* Estilo de inputs deshabilitados o no seleccionables */
+input[disabled], select[disabled] {
+    background-color: #F0E68C; /* Color suave para campos deshabilitados */
+    opacity: 0.6;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Estilo de inputs con error (puedes añadir lógica para mostrar errores) */
+input.error,
+select.error {
+    border-color: #FF4500; /* Rojo para indicar error */
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Animación de error (sacudida) */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Transiciones suaves para todos los inputs y botones */
+input,
+textarea,
+select,
+button {
+    transition: all 0.3s ease;
+}

@@ -10,7 +10,6 @@ const TurnoNuevo = () => {
     return (
         <div>
             <Header />
-            <h2>Fecha seleccionada: {fechaSeleccionada ? fechaSeleccionada.toLocaleDateString() : 'No hay fecha seleccionada'}</h2>
             <FormTurnoNuevo fechaInicial={fechaSeleccionada} /> {/* Pasa la fecha seleccionada al formulario */}
             <Soporte />
         </div>

@@ -1,5 +1,6 @@
 // FormTurnoNuevo.tsx
 import React, { useState } from 'react';
+import './FormTurnoNuevo.css';
 
 interface FormTurnoNuevoProps {
     fechaInicial: Date | null; // Fecha inicial recibida como prop
@@ -23,8 +24,11 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
+        
+        <form className='contenidoformturno' onSubmit={handleSubmit}>
+                        <h2 className='margentop'>Llena el formulario con tus datos </h2>
+                        <div >
+            <div >
                 <label>Fecha:</label>
                 <input 
                     type="date" 
@@ -96,9 +100,8 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
             </div>
             <div>
                 <label>Descripcion personal:</label>
-                <input 
-                    type="text" 
-                    value={apellido}
+                <textarea 
+                    value={descPersonal}
                     onChange={(e) => setDescPersonal(e.target.value)} 
                     required 
                 />
@@ -106,6 +109,7 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
             <button >Cancelar</button>
 
             <button type="submit">Enviar</button>
+            </div>
         </form>
     );
 };
