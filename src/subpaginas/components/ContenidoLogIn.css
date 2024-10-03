@@ -3,10 +3,11 @@
     display: flex;
     justify-content: center;  /* Centra horizontalmente */
     align-items: center;      /* Centra verticalmente */
-    height: 100vh;            /* Ocupa toda la pantalla */
+    height: 80vh;            /* Ocupa toda la pantalla */
     background-color: #FFE4E1; /* Fondo romántico */
     animation: fadeInBackground1 1.5s ease-in-out;
     padding: 20px; /* Para agregar un pequeño espacio en los bordes en pantallas más pequeñas */
+    margin-top: 5%;
 }
 
 /* Estilos del formulario */
@@ -16,11 +17,39 @@
     padding: 30px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     width: 100vw;              /* Ocupa el 100% del contenedor */
-    max-width: 91vw;          /* Máximo ancho fijo */
+    max-width: 91vw;           /* Máximo ancho fijo */
     animation: slideIn1 1s ease-in-out;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Adaptaciones para pantallas móviles */
+@media (max-width: 768px) {
+    .login-container1 {
+        padding: 10px;
+        margin-top: -30%;
+
+    }
+
+    .login-form1 {
+        padding: 20px;
+        max-width: 76vw;   /* Aumenta el ancho máximo en móviles */
+    }
+
+    .login-form1 h2 {
+        font-size: 24px;   /* Reduce el tamaño de la fuente del título */
+    }
+
+    .form-group1 input {
+        font-size: 14px;   /* Reduce el tamaño de la fuente en los inputs */
+        padding: 8px;      /* Reduce el relleno interno de los inputs */
+    }
+
+    .login-button1 {
+        font-size: 14px;   /* Ajusta el tamaño de fuente del botón */
+        padding: 8px 16px; /* Ajusta el relleno del botón */
+    }
 }
 
 /* Animación de entrada para el formulario */
@@ -57,6 +86,9 @@
 .form-group1 {
     margin-bottom: 20px;
     text-align: left;
+    width: 70%;
+    margin-left: 14%;
+    margin-right: auto;
 }
 
 .form-group1 label {
