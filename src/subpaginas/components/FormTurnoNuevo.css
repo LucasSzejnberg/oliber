@@ -1,5 +1,3 @@
-/* FormTurnoNuevo.css */
-
 /* Animaciones de entrada */
 @keyframes fadeIn {
     from {
@@ -23,16 +21,23 @@
     }
 }
 
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
 /* Contenedor del formulario */
 form {
     background-color: #FFF0F5; /* Lavanda suave */
     border-radius: 10px;
     padding: 20px;
-    max-width: 80vw;
+    max-width: 90vw; /* Ajuste para móviles */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in-out;
-    align-self: center;
-    margin-left: 10%;
+    margin: 5% auto;
 }
 
 /* Estilo de etiquetas */
@@ -43,8 +48,40 @@ label {
     color: #B22222; /* Rojo oscuro */
     animation: fadeIn 0.6s ease-in-out;
 }
-.contenidoformturno{
+
+/* Ajuste del contenedor en móviles */
+.contenidoformturno {
+    margin-top: 10%;
     width: 100vw;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+form input[type="date"],
+form input[type="time"],
+form input[type="text"],
+form textarea,
+form select {
+    width: 80%; /* Ajusta el ancho según sea necesario */
+    max-width: 400px; /* Limita el tamaño máximo en pantallas grandes */
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #E6E6FA;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
+form button {
+    width: 80%;
+    max-width: 200px;
+    margin: 10px 0;
+    align-items: center;
 }
 
 /* Estilo de inputs y selectores */
@@ -54,7 +91,7 @@ input[type="text"],
 textarea,
 select {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 5px 0 15px;
     border: 1px solid #E6E6FA; /* Color gris claro */
     border-radius: 5px;
@@ -64,9 +101,7 @@ select {
     transition: all 0.3s ease-in-out;
 }
 
-.margentop{
-    margin-top: 10%;
-}
+
 
 /* Animación de foco para inputs */
 input[type="date"]:focus,
@@ -98,6 +133,7 @@ button {
     margin-right: 10px;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     animation: fadeIn 0.7s ease-in-out;
+    width: 100%; /* Ajuste para móviles */
 }
 
 /* Hover effects para botones */
@@ -114,20 +150,11 @@ input[disabled], select[disabled] {
     transition: opacity 0.5s ease-in-out;
 }
 
-/* Estilo de inputs con error (puedes añadir lógica para mostrar errores) */
+/* Estilo de inputs con error */
 input.error,
 select.error {
     border-color: #FF4500; /* Rojo para indicar error */
     animation: shake 0.3s ease-in-out;
-}
-
-/* Animación de error (sacudida) */
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
 }
 
 /* Transiciones suaves para todos los inputs y botones */
@@ -136,4 +163,78 @@ textarea,
 select,
 button {
     transition: all 0.3s ease;
+}
+
+.margentop{
+
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* FormTurnoNuevo.css */
+
+/* Estilo para centrar los botones */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los botones */
+    margin-top: 20px; /* Margen superior para separarlos del resto del formulario */
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+form button[type="button"] {
+    background-color: #f44336; /* Color para el botón de "Cancelar" */
+}
+
+form button:hover {
+    background-color: #45a049; /* Efecto hover para "Enviar" */
+}
+
+form button[type="button"]:hover {
+    background-color: #e53935; /* Efecto hover para "Cancelar" */
+}
+
+/* Medios específicos para pantallas pequeñas */
+@media (max-width: 480px) {
+ 
+    .margentop{
+
+        align-self: center;
+        margin-top: 10%;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form{
+        max-width: 80vw;
+    }
+    label {
+        font-size: 14px;
+    }
+
+    input,
+    textarea,
+    select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        margin-bottom: 10px;
+        font-size: 14px;
+        padding: 10px;
+    }
 }

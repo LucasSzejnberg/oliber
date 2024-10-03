@@ -25,10 +25,10 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
 
     return (
         
-        <form className='contenidoformturno' onSubmit={handleSubmit}>
-                        <h2 className='margentop'>Llena el formulario con tus datos </h2>
-                        <div >
-            <div >
+        <form className="contenidoformturno" onSubmit={handleSubmit}>
+        <h2 className="margentop">Llena el formulario con tus datos</h2>
+        <div>
+            <div className="form-group">
                 <label>Fecha:</label>
                 <input 
                     type="date" 
@@ -36,7 +36,7 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
                     onChange={(e) => setFecha(new Date(e.target.value))}
                 />
             </div>
-            <div>
+            <div className="form-group">
                 <label>Hora:</label>
                 <input 
                     type="time" 
@@ -45,7 +45,7 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
                     required 
                 />
             </div>
-            <div>
+            <div className="form-group">
                 <label>Motivo:</label>
                 <select 
                     value={motivo} 
@@ -72,7 +72,7 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
                     />
                 )}
             </div>
-            <div>
+            <div className="form-group">
                 <label>Descripción sobre la cita:</label>
                 <textarea 
                     value={descripcion} 
@@ -80,7 +80,7 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
                     required 
                 />
             </div>
-            <div>
+            <div className="form-group">
                 <label>Nombre:</label>
                 <input 
                     type="text" 
@@ -89,7 +89,7 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
                     required 
                 />
             </div>
-            <div>
+            <div className="form-group">
                 <label>Apellido:</label>
                 <input 
                     type="text" 
@@ -98,19 +98,21 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
                     required 
                 />
             </div>
-            <div>
-                <label>Descripcion personal:</label>
+            <div className="form-group">
+                <label>Descripción personal:</label>
                 <textarea 
                     value={descPersonal}
                     onChange={(e) => setDescPersonal(e.target.value)} 
                     required 
                 />
             </div>
-            <button >Cancelar</button>
-
+            <div className="button-group">
+            <button type="button">Cancelar</button>
             <button type="submit">Enviar</button>
-            </div>
-        </form>
+        </div>
+        </div>
+    </form>
+    
     );
 };
 
