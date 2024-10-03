@@ -9,6 +9,16 @@
     padding: 20px; /* Para agregar un pequeño espacio en los bordes en pantallas más pequeñas */
     margin-top: 5%;
 }
+.login-container2 {
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+    height: 100vh;            /* Ocupa toda la pantalla */
+    background-color: #FFE4E1; /* Fondo romántico */
+    animation: fadeInBackground1 1.5s ease-in-out;
+    padding: 20px; /* Para agregar un pequeño espacio en los bordes en pantallas más pequeñas */
+    margin-top: 5%;
+}
 
 /* Estilos del formulario */
 .login-form1 {
