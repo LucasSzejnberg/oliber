@@ -92,6 +92,7 @@ p {
 }
 
 .btn-agendar {
+    width: 80%;
     padding: 12px 30px; /* Espaciado reducido dentro del botón */
     font-size: 1.4rem; /* Tamaño de fuente más pequeño */
     font-weight: bold; /* Texto en negrita */

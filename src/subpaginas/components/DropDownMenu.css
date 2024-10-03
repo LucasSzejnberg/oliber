@@ -1,0 +1,60 @@
+.dropdown-menu {
+  position: absolute;
+  top: 60px; /* Ajusta según el tamaño del header */
+  right: 20px; /* Ajusta según el diseño */
+  background-color: #fce4ec; /* Fondo rosa suave */
+  box-shadow: 0 8px 16px rgba(136, 14, 79, 0.2); /* Sombra con tono burdeos */
+  border-radius: 10px; /* Bordes suaves para un toque romántico */
+  z-index: 1000;
+  animation: fadeIn 0.3s ease; /* Animación suave de entrada */
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 15px;
+}
+
+.dropdown-menu ul li {
+  padding: 10px;
+  border-bottom: 1px solid #880e4f; /* Separadores en tono burdeos */
+}
+
+.dropdown-menu ul li:last-child {
+  border-bottom: none; /* Elimina la línea del último elemento */
+}
+
+/* Estilo compartido para enlaces y botones */
+.dropdown-menu ul li a, 
+.dropdown-menu ul li button {
+  display: block; /* Hace que ambos ocupen el mismo espacio */
+  text-decoration: none;
+  color: #880e4f; /* Texto en burdeos oscuro */
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-family: 'Cabin Sketch', cursive; /* Tipografía romántica */
+  font-size: 16px; /* Tamaño de letra ajustado */
+  padding: 10px 0; /* Espaciado interno consistente */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu ul li button:hover, 
+.dropdown-menu ul li a:hover {
+  background-color: #f8bbd0; /* Rosa más claro en hover */
+  color: white; /* Texto blanco en hover */
+}
+
+/* Animación de entrada suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

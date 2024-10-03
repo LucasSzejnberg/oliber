@@ -13,6 +13,37 @@
     margin-bottom: 40px;
     animation: slideDown 0.5s ease-in; /* Animación de entrada */
 }
+/* Estilo para la información del usuario */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #880e4f;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .greeting {
+    margin-right: 10px;
+    color: #880e4f;
+  }
+  
+  .profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .auth-section {
+    display: flex;
+    align-items: center;
+  }
+  
 
 /* Contenedor para alinear los elementos del header */
 .header-container {

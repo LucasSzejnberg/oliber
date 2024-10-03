@@ -6,8 +6,8 @@ const Home = () => {
     return (
         
       <div>
-        <Header></Header>
-        <ContenidoHome></ContenidoHome>
+      <Header name="estoestavencid" profilePicture="logo.png" />
+      <ContenidoHome></ContenidoHome>
         <Soporte></Soporte>
       </div>
     );
