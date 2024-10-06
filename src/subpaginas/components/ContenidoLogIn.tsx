@@ -7,12 +7,43 @@ const ContenidoLogIn: React.FC = () => {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Aquí manejarías la lógica de inicio de sesión
-        console.log({ correo, password });
-        // Suponiendo que el login es exitoso
-        navigate('/'); // Redirige al dashboard o cualquier otra página
+        
+        const data = {
+            nombre: correo,   // Se utiliza 'nombre' en lugar de 'correo'
+            password: password // Se utiliza 'password' como clave para la contraseña
+        };
+
+        try {
+            const response = await fetch('https://oliver-six.vercel.app/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) {
+                throw new Error('Error en el inicio de sesión');
+            }
+
+            const result = await response.json();
+            console.log(result);
+
+            // Guarda el accessToken en el localStorage
+            if (result.accessToken) {
+                localStorage.setItem('accessToken', result["accessToken"]);
+                console.log("el token:",result["accessToken"]);
+
+                console.log("guardo esto, ", localStorage.getItem('accessToken'));
+            }
+
+            // Suponiendo que el login es exitoso
+            navigate('/'); // Redirige al dashboard o cualquier otra página
+        } catch (error) {
+            console.error('Hubo un error con el inicio de sesión:', error);
+        }
     };
 
     return (

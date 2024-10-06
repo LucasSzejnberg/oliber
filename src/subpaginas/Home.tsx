@@ -1,12 +1,12 @@
-import Header from "./components/Header"
 import ContenidoHome from "./components/ContenidoHome";
 import Soporte from "./components/Soporte";
+import HeaderCompleto from "./components/HeaderCompleto";
 
 const Home = () => {
     return (
         
       <div>
-      <Header  />
+      <HeaderCompleto  />
       <ContenidoHome></ContenidoHome>
         <Soporte></Soporte>
       </div>

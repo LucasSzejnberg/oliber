@@ -61,7 +61,8 @@ label {
     align-items: center;
     margin-bottom: 15px;
 }
-
+form input[type="number"],
+form input[type="file"],
 form input[type="date"],
 form input[type="time"],
 form input[type="text"],

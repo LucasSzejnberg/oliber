@@ -5,6 +5,7 @@ import { FechaProvider } from './subpaginas/components/FechaContext';
 import TurnoNuevo from './subpaginas/TurnoNuevo'; // Asegúrate de importar TurnoNuevo
 import InicioSesion from "./subpaginas/InicioSesion.tsx";
 import Registro from "./subpaginas/Registro.tsx";
+import Perfil from "./subpaginas/Perfil.tsx";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/NuevoTurno" element={<TurnoNuevo />} />
         <Route path="/login" element={<InicioSesion />} />
         <Route path="/register" element={<Registro />} />
+        <Route path="/perfil" element={<Perfil />} />
 
       </Routes>
     </Router>

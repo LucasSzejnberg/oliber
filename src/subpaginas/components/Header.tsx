@@ -18,6 +18,9 @@ const Header: React.FC<HeaderProps> = ({ name, profilePicture }) => {
 
   const handleLogout = () => {
     console.log("Sesión cerrada");
+    localStorage.removeItem('accessToken'); // Elimina el token del localStorage
+    window.location.href = '/'; // Redirigir a la página de inicio de sesión
+
   };
 
   // Cerrar el menú si se hace clic fuera de él

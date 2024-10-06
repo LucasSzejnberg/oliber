@@ -37,10 +37,17 @@ const ContenidoLogIn: React.FC = () => {
 
             const result = await response.json();
             console.log(result);
+
+            // Guarda el accessToken en el localStorage
+            if (result.accessToken) {
+                localStorage.setItem('accessToken', result.accessToken);
+            }
+
             // Suponiendo que el registro es exitoso
             navigate('/'); // Redirige a la página principal u otro destino
         } catch (error) {
             console.error('Hubo un error con el registro:', error);
+            console.log(error);
         }
     };
 

@@ -1,13 +1,14 @@
 import Soporte from "./components/Soporte";
-import ContenidoLogIn from "./components/ContenidoLogIn";
 import HeaderCompleto from "./components/HeaderCompleto";
+import ContenidoPerfil from "./components/ContenidoPerfil";
 
 const Home = () => {
     return (
         
       <div>
         <HeaderCompleto></HeaderCompleto>
-        <ContenidoLogIn></ContenidoLogIn>
+
+<ContenidoPerfil></ContenidoPerfil>
         <Soporte></Soporte>
       </div>
     );
