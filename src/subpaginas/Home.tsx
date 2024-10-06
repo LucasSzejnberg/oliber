@@ -6,7 +6,7 @@ const Home = () => {
     return (
         
       <div>
-      <Header name="estoestavencid" profilePicture="logo.png" />
+      <Header  />
       <ContenidoHome></ContenidoHome>
         <Soporte></Soporte>
       </div>
