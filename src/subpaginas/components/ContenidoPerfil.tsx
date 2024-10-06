@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ContenidoPerfil.css';
 
 const ContenidoPerfil: React.FC = () => {
@@ -8,6 +8,49 @@ const ContenidoPerfil: React.FC = () => {
     const [instagram, setInstagram] = useState('');
     const [tiktok, setTiktok] = useState('');
     const [fotoPerfil, setFotoPerfil] = useState<File | null>(null);
+    const [fotoUrl, setFotoUrl] = useState(''); // Para mostrar la URL de la foto si ya existe
+
+    useEffect(() => {
+        // Función para obtener los datos del perfil
+        const fetchPerfilData = async () => {
+            try {
+                const token = localStorage.getItem('accessToken'); // Obtener el token de la memoria
+
+                if (!token) {
+                    console.error('Token no encontrado');
+                    return;
+                }
+
+                const response = await fetch('https://oliver-six.vercel.app/perfil', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`, // Enviar el token en los headers
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (!response.ok) {
+                    console.error('Error en la solicitud:', response.statusText);
+                    return;
+                }
+
+                const data = await response.json();
+
+                // Actualizar los estados con los datos obtenidos
+                setNombre(data.nombre || '');
+                setApellido(data.apellido || '');
+                setEdad(data.edad || '');
+                setInstagram(data.instagram || '');
+                setTiktok(data.tiktok || '');
+                setFotoUrl(data.foto || ''); // Si no hay foto, dejar el campo vacío o agregar una imagen por defecto
+            } catch (error) {
+                console.error('Error al obtener los datos del perfil:', error);
+            }
+        };
+
+        // Ejecutar la función cuando el componente se monta
+        fetchPerfilData();
+    }, []);
 
     const handleFotoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
@@ -39,11 +82,11 @@ const ContenidoPerfil: React.FC = () => {
                     <div className="form-group3">
                         <label htmlFor="foto">Foto de Perfil:</label>
                         <input type="file" id="foto" onChange={handleFotoChange} />
+                        {fotoUrl && <img src={fotoUrl} alt="Foto de perfil actual" className="foto-actual3" />} {/* Mostrar foto actual si existe */}
                     </div>
                     <div className="form-group3">
                         <label htmlFor="nombre">Nombre:</label>
                         <input
-                        className='creeria'
                             type="text"
                             id="nombre"
                             value={nombre}
@@ -53,8 +96,6 @@ const ContenidoPerfil: React.FC = () => {
                     <div className="form-group3">
                         <label htmlFor="apellido">Apellido:</label>
                         <input
-                                                className='creeria'
-
                             type="text"
                             id="apellido"
                             value={apellido}
@@ -66,7 +107,6 @@ const ContenidoPerfil: React.FC = () => {
                     <div className="form-group3">
                         <label htmlFor="edad">Edad:</label>
                         <input
-                        
                             type="number"
                             id="edad"
                             value={edad}
@@ -76,8 +116,6 @@ const ContenidoPerfil: React.FC = () => {
                     <div className="form-group3">
                         <label htmlFor="instagram">Instagram:</label>
                         <input
-                                                className='creeria'
-
                             type="text"
                             id="instagram"
                             value={instagram}
@@ -87,8 +125,6 @@ const ContenidoPerfil: React.FC = () => {
                     <div className="form-group3">
                         <label htmlFor="tiktok">TikTok:</label>
                         <input
-                                                className='creeria'
-
                             type="text"
                             id="tiktok"
                             value={tiktok}
