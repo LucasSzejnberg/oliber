@@ -65,6 +65,8 @@ const ContenidoPerfil: React.FC = () => {
     };
 
     const handleCancelar = () => {
+        window.location.href = '/'; // Redirigir a la página de inicio de sesión
+
         // Reiniciar campos
         setNombre('');
         setApellido('');
@@ -81,7 +83,7 @@ const ContenidoPerfil: React.FC = () => {
                 <div className="form-row3">
                     <div className="form-group3">
                         <label htmlFor="foto">Foto de Perfil:</label>
-                        <input type="file" id="foto" onChange={handleFotoChange} />
+                        <input type="file" id="foto" className='negro' onChange={handleFotoChange} />
                         {fotoUrl && <img src={fotoUrl} alt="Foto de perfil actual" className="foto-actual3" />} {/* Mostrar foto actual si existe */}
                     </div>
                     <div className="form-group3">

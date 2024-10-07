@@ -29,7 +29,7 @@
     width: calc(100% / 7); /* 100% dividido por 7 días de la semana */
     height: 100px; /* Altura fija para cada celda */
     text-align: center; /* Centra el texto */
-    border: 1px solid #7b7b7b; /* Borde gris claro */
+    border: 1px solid #000000; /* Borde gris claro */
     cursor: pointer; /* Cambia el cursor al pasar sobre el día */
     transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
     background-color: #72ae78; /* Color de fondo por defecto */
@@ -41,6 +41,7 @@
     height: 40px; /* Altura fija para los botones */
     margin: 0; /* Elimina el margen para que no afecte la distribución */
     transition: transform 0.2s, background-color 0.3s; /* Transiciones para botones */
+    background-color: #FF1493;
 }
 
 /* Animaciones para botones */

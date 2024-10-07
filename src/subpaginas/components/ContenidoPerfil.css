@@ -12,8 +12,8 @@
 
 h2 {
     text-align: center;
-    font-family: 'Dancing Script', cursive; /* Fuente romántica */
-    color: #b94b4b; /* Color romántico */
+  color: #FF1493;
+    font-family: 'Bold', system-ui; /* Tipografía más romántica */
 }
 
 .perfil-form3 {
@@ -56,7 +56,7 @@ input[type="file"] {
 input[type="file"] {
     /* Ajustes específicos para el input de archivo (foto de perfil) */
     padding: 10px;
-    border: 2px solid #e57c7c;
+    border: 2px solid #000000;
     border-radius: 8px;
     font-size: 16px;
     width: calc(100% - 20px); /* Asegura que el input de archivo tenga el mismo tamaño */
@@ -94,9 +94,13 @@ input[type="number"]:focus {
 
 .cancelar-btn3 {
     background-color: #d7d7d7;
-    color: #a35c8a;
-}
+    color: white;
 
+}
+.negro{
+    color: white;
+    background-color: #000000;
+}
 .guardar-btn3:hover {
     background-color: #379a5f; /* Color más oscuro al pasar el mouse */
 }

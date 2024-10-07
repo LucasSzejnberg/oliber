@@ -87,10 +87,10 @@ const Calendario: React.FC = () => {
 
     return (
         <div className="calendario">
-            <h2>Agendá tu turno ya</h2>
+            <h2 className='subtitle1'>Agendá tu turno ya</h2>
             <div className="navegacion">
                 <button className="botonescalendario" onClick={() => cambiarMes(-1)}>&lt; </button>
-                <h2>{fechaActual.toLocaleString('default', { month: 'long' })} {fechaActual.getFullYear()}</h2>
+                <h2 className='subtitle1'>{fechaActual.toLocaleString('default', { month: 'long' })} {fechaActual.getFullYear()}</h2>
                 <button className="botonescalendario" onClick={() => cambiarMes(1)}> &gt;</button>
             </div>
             <table className="tabla-calendario">

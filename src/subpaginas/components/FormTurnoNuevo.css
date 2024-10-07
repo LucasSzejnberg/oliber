@@ -43,8 +43,9 @@ form {
 label {
     display: block;
     margin: 15px 0 5px;
-    font-family: 'Cursive', sans-serif; /* Fuente cursiva para un toque romántico */
-    color: #B22222; /* Rojo oscuro */
+    color: #800080
+    ;
+    font-family: 'Bold', system-ui; /* Tipografía más romántica */
     animation: fadeIn 0.6s ease-in-out;
 }
 
@@ -167,7 +168,8 @@ button {
 }
 
 .margentop{
-
+    color: #FF1493;
+    font-family: 'Bold', system-ui; /* Tipografía más romántica */
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -186,7 +188,7 @@ button {
 form button {
     padding: 10px 20px;
     border: none;
-    background-color: #4CAF50;
+    background-color: #FF1493;
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -195,15 +197,15 @@ form button {
 }
 
 form button[type="button"] {
-    background-color: #f44336; /* Color para el botón de "Cancelar" */
+    background-color: #FF1493; /* Color para el botón de "Cancelar" */
 }
 
 form button:hover {
-    background-color: #45a049; /* Efecto hover para "Enviar" */
+    background-color: #c4056b; /* Efecto hover para "Enviar" */
 }
 
 form button[type="button"]:hover {
-    background-color: #e53935; /* Efecto hover para "Cancelar" */
+    background-color: #c4056b; /* Efecto hover para "Cancelar" */
 }
 
 /* Medios específicos para pantallas pequeñas */
