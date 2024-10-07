@@ -133,11 +133,12 @@ const ContenidoPerfil: React.FC = () => {
                     </div>
                 </div>
                 <div className="button-group3">
-                    <button type="button" className="guardar-btn3" onClick={handleGuardar}>
-                        Guardar
-                    </button>
+                   
                     <button type="button" className="cancelar-btn3" onClick={handleCancelar}>
                         Cancelar
+                    </button>
+                    <button type="button" className="guardar-btn3" onClick={handleGuardar}>
+                        Guardar
                     </button>
                 </div>
             </form>

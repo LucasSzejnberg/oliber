@@ -1,6 +1,6 @@
 /* Estilos para el componente de soporte */
 .soporte {
-    background-color: #ffe4e1; /* Fondo color melocotón suave */
+    background-color: #FCE4EC; /* Fondo color melocotón suave */
     padding: 20px;
     text-align: center;
     position: relative;
@@ -9,8 +9,8 @@
     width: auto;
     animation: slideUp 0.5s ease-in-out;
     border-radius: 15px; /* Bordes redondeados para suavizar el diseño */
-    font-family: 'Cursive', sans-serif; /* Tipografía romántica */
-    color: #800080; /* Color morado para el texto */
+    font-family:  system-ui; /* Tipografía más romántica */
+    color: #000000; /* Color morado para el texto */
     margin-top: auto;
     align-self: flex-end;
 }
@@ -32,7 +32,7 @@
     margin: 0;
     color: #9932CC; /* Color lavanda profundo */
     animation: fadeIn 0.6s ease-in;
-    font-style: italic; /* Agrega un toque cursivo */
+    font-family:  system-ui; /* Tipografía más romántica */
 }
 
 /* Animación de desvanecimiento */
@@ -48,15 +48,19 @@
 .contacto {
     margin: 5px 0 0;
     font-size: 1rem;
-    color: #C71585; /* Rosa intenso para los textos de contacto */
+    color: #9932CC; /* Rosa intenso para los textos de contacto */
     transition: color 0.3s ease;
+    font-family:  system-ui; /* Tipografía más romántica */
+
 }
 
 .contacto a {
     color: #FF69B4; /* Enlaces en rosa brillante */
     text-decoration: none;
     font-weight: bold; /* Resalta el enlace */
-    transition: color 0.3s ease;
+    transition: color 0.3s ease;    
+    font-family:  system-ui; /* Tipografía más romántica */
+
 }
 
 .contacto a:hover {

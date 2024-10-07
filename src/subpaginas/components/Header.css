@@ -29,7 +29,9 @@
   
   .greeting {
     margin-right: 10px;
-    color: #880e4f;
+    color: #FF1493;
+    font-family:  system-ui; /* Tipografía más romántica */
+
   }
   
   .profile-picture {
@@ -42,6 +44,7 @@
   .auth-section {
     display: flex;
     align-items: center;
+    align-self: center;
   }
   
 
@@ -104,26 +107,30 @@
 .login-btn, .register-btn {
     padding: 10px 20px;
     border-radius: 25px;
-    border: 2px solid #d81b60; /* Borde rosa oscuro */
-    color: #d81b60; /* Texto rosa oscuro */
+    border: 2px solid #FF1493; /* Borde rosa oscuro */
+    color: #FF1493; /* Texto rosa oscuro */
     text-decoration: none;
+    font-family:  system-ui; /* Tipografía más romántica */
+
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Transiciones para los botones */
 }
 
 .login-btn:hover {
-    background-color: #d81b60; /* Fondo rosa oscuro en hover */
+    background-color: #FF1493; /* Fondo rosa oscuro en hover */
     color: white; /* Texto blanco al hacer hover */
     transform: translateY(-3px); /* Eleva el botón al hacer hover */
 }
 
 .register-btn {
-    background-color: #d81b60; /* Fondo rosa oscuro para el botón de registro */
+    background-color: #FF1493; /* Fondo rosa oscuro para el botón de registro */
     color: white; /* Texto blanco */
+    font-family:  system-ui; /* Tipografía más romántica */
+
 }
 
 .register-btn:hover {
     background-color: white; /* Fondo blanco en hover */
-    color: #d81b60; /* Texto rosa en hover */
+    color: #FF1493; /* Texto rosa en hover */
     transform: translateY(-3px); /* Eleva el botón al hacer hover */
 }
 

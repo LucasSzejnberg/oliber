@@ -10,7 +10,18 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ name, profilePicture }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // Nuevo estado para controlar la carga
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Simular carga de datos de usuario (puedes sustituirlo por una llamada real a la API)
+    const loadUserData = () => {
+      setTimeout(() => {
+        setIsLoading(false); // Finalizar la carga
+      }, 1000); // Simula un tiempo de espera para los datos del usuario
+    };
+    loadUserData();
+  }, []);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -20,7 +31,6 @@ const Header: React.FC<HeaderProps> = ({ name, profilePicture }) => {
     console.log("Sesión cerrada");
     localStorage.removeItem('accessToken'); // Elimina el token del localStorage
     window.location.href = '/'; // Redirigir a la página de inicio de sesión
-
   };
 
   // Cerrar el menú si se hace clic fuera de él
@@ -41,6 +51,10 @@ const Header: React.FC<HeaderProps> = ({ name, profilePicture }) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isDropdownOpen]);
+
+  if (isLoading) {
+    return null; // Mientras se cargan los datos, no se muestra nada
+  }
 
   return (
     <header className="header">

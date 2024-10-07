@@ -42,11 +42,11 @@
 /* Estilos del título */
 .titulo {
     text-align: center;
-    color: var(--color-texto); /* Color morado para el título */
+    color: #FF1493; /* Color morado para el título */
     font-size: 2.8rem;
     margin-bottom: 20px;
     animation: slideIn 0.8s ease-in-out; /* Animación de entrada */
-    font-family: 'Cursive', sans-serif; /* Tipografía más romántica */
+    font-family: 'Bold', system-ui; /* Tipografía más romántica */
     letter-spacing: 2px; /* Espaciado entre letras */
 }
 
@@ -103,6 +103,18 @@ p {
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
     transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves para el color y escala */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para el botón */
+}
+
+.subtitle1{
+    color: #FF1493;
+    font-family: 'Bold', system-ui; /* Tipografía más romántica */
+
+}
+.subtitle11{
+    color: #9932CC    ;
+    font-family:  system-ui; /* Tipografía más romántica */
+
+
 }
 
 .btn-agendar:hover {
