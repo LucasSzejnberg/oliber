@@ -29,13 +29,14 @@
 .dropdown-menu ul li button {
   display: block; /* Hace que ambos ocupen el mismo espacio */
   text-decoration: none;
-  color: #880e4f; /* Texto en burdeos oscuro */
+  color: #9932cc
+  ; /* Texto en burdeos oscuro */
   background: none;
   border: none;
   cursor: pointer;
   width: 100%;
   text-align: left;
-  font-family: 'Cabin Sketch', cursive; /* Tipografía romántica */
+  font-family: 'Bold', system-ui; /* Tipografía más romántica */
   font-size: 16px; /* Tamaño de letra ajustado */
   padding: 10px 0; /* Espaciado interno consistente */
   transition: background-color 0.3s ease, color 0.3s ease;
