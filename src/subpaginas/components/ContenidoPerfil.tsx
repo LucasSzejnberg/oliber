@@ -66,9 +66,9 @@ const ContenidoPerfil: React.FC = () => {
 
             // Enviar la nueva foto o la foto actual, o 'logo.png' si no hay ninguna
             if (fotoPerfil) {
-                formData.append('foto', fotoPerfil);
+                formData.append('file', fotoPerfil);
             } else {
-                formData.append('foto', fotoUrl || 'logo.png');
+                //formData.append('file', fotoUrl || 'logo.png');
             }
 
             console.log({
