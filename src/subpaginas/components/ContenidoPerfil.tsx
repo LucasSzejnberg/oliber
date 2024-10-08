@@ -5,12 +5,12 @@ const ContenidoPerfil: React.FC = () => {
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
     const [edad, setEdad] = useState<number | ''>('');
-    const [altura, setAltura] = useState<number | ''>(''); // Agregar altura
+    const [altura, setAltura] = useState<number | ''>('');
     const [instagram, setInstagram] = useState('');
     const [tiktok, setTiktok] = useState('');
-    const [descripcion, setDescripcion] = useState(''); // Agregar descripción
+    const [descripcion, setDescripcion] = useState('');
     const [fotoPerfil, setFotoPerfil] = useState<File | null>(null);
-    const [fotoUrl, setFotoUrl] = useState('');
+    const [fotoUrl, setFotoUrl] = useState(''); // Guardar la URL de la foto
 
     useEffect(() => {
         const fetchPerfilData = async () => {
@@ -31,9 +31,9 @@ const ContenidoPerfil: React.FC = () => {
                 setEdad(data.edad || '');
                 setInstagram(data.instagram || '');
                 setTiktok(data.tiktok || '');
-                setAltura(data.altura || ''); // Si hay altura en los datos
-                setDescripcion(data.descripcion || ''); // Si hay descripción en los datos
-                setFotoUrl(data.foto || '');
+                setAltura(data.altura || '');
+                setDescripcion(data.descripcion || '');
+                setFotoUrl(data.foto || 'logo.png'); // Si no hay foto, usar 'logo.png'
             }
         };
 
@@ -59,12 +59,16 @@ const ContenidoPerfil: React.FC = () => {
             formData.append('nombre', nombre);
             formData.append('apellido', apellido);
             formData.append('edad', String(edad));
-            formData.append('altura', String(altura)); // Convertir a string
+            formData.append('altura', String(altura));
             formData.append('instagram', instagram);
             formData.append('tiktok', tiktok);
-            formData.append('descripcion', descripcion); // Agregar descripción
+            formData.append('descripcion', descripcion);
+
+            // Enviar la nueva foto o la foto actual, o 'logo.png' si no hay ninguna
             if (fotoPerfil) {
-                formData.append('fotoPerfil', fotoPerfil);
+                formData.append('foto', fotoPerfil);
+            } else {
+                formData.append('foto', fotoUrl || 'logo.png');
             }
 
             console.log({
@@ -76,7 +80,13 @@ const ContenidoPerfil: React.FC = () => {
                 tiktok,
                 descripcion,
                 fotoPerfil,
+                fotoUrl
             });
+            console.log("Contenido del FormData:");
+            for (let [key, value] of formData.entries()) {
+                console.log(key, value);
+            }
+    
 
             const response = await fetch('https://oliver-six.vercel.app/perfil', {
                 method: 'POST',
@@ -95,6 +105,8 @@ const ContenidoPerfil: React.FC = () => {
 
             const data = await response.json();
             console.log('Datos guardados correctamente:', data);
+            window.location.href = '/';
+
         } catch (error) {
             console.error('Error al guardar los datos:', error);
         }
@@ -108,8 +120,8 @@ const ContenidoPerfil: React.FC = () => {
         setInstagram('');
         setTiktok('');
         setFotoPerfil(null);
-        setAltura(''); // Reiniciar altura
-        setDescripcion(''); // Reiniciar descripción
+        setAltura('');
+        setDescripcion('');
     };
 
     return (
@@ -169,11 +181,10 @@ const ContenidoPerfil: React.FC = () => {
                             onChange={(e) => setInstagram(e.target.value)}
                         />
                     </div>
-                   
                 </div>
 
                 <div className="form-row3">
-                <div className="form-group3">
+                    <div className="form-group3">
                         <label htmlFor="tiktok">TikTok:</label>
                         <input
                             type="text"
@@ -182,14 +193,14 @@ const ContenidoPerfil: React.FC = () => {
                             onChange={(e) => setTiktok(e.target.value)}
                         />
                     </div>
-                <div className="form-group3">
-                    <label htmlFor="descripcion">Descripción:</label>
-                    <textarea
-                        id="descripcion"
-                        value={descripcion}
-                        onChange={(e) => setDescripcion(e.target.value)}
-                    />
-                </div>
+                    <div className="form-group3">
+                        <label htmlFor="descripcion">Descripción:</label>
+                        <textarea
+                            id="descripcion"
+                            value={descripcion}
+                            onChange={(e) => setDescripcion(e.target.value)}
+                        />
+                    </div>
                 </div>
                 <div className="button-group3">
                     <button type="button" className="cancelar-btn3" onClick={handleCancelar}>
