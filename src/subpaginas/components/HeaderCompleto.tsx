@@ -31,7 +31,6 @@ const HeaderCompleto: React.FC = () => {
                     setProfilePicture(result.foto || 'logo.png'); // Usa 'logo.png' si la foto es null
                 } catch (error) {
                     console.error('Hubo un error al obtener los datos del perfil:', error);
-                    navigate('/login'); // Opcional: redirige si hay un error
                 }
             }
         };
