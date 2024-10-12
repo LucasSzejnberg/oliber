@@ -27,7 +27,9 @@ const ContenidoMisTurnos: React.FC = () => {
           });
           if (response.ok) {
             const data = await response.json();
+            console.log(data);
             setTurnos(data);
+
           } else {
             console.error('Error en la solicitud:', response.statusText);
           }
@@ -46,7 +48,7 @@ const ContenidoMisTurnos: React.FC = () => {
         return 'tarjeta-reprobado';
       case 'pendiente':
         return 'tarjeta-enproceso';
-      case 'aprobado':
+      case 'confirmado':
         return 'tarjeta-aprobado';
       default:
         return '';
