@@ -82,7 +82,7 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
 
                 if (response.ok) {
                     console.log('Datos enviados con éxito');
-                    window.location.href = '/misturnos'; // Redirigir a la página de turnos
+                    window.location.href = '/'; // Redirigir a la página de turnos
                 } else {
                     console.error('Error en la solicitud:', response.statusText);
                 }
