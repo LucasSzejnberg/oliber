@@ -1,4 +1,6 @@
 /* Calendario.css */
+
+
 .calendario {
     margin-top: 5%;
     display: flex;
@@ -44,6 +46,9 @@
     background-color: #FF1493;
 }
 
+
+
+  
 /* Animaciones para botones */
 .botonescalendario:hover {
     transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
@@ -63,9 +68,32 @@
 }
 
 /* Estilo para hover (solo en desktop) */
+/* Estilo para hover en días normales */
 .dia:hover {
-    background-color: #44fc5a; /* Color de fondo al pasar el mouse */
+    background-color: #44fc5a; /* Color de fondo verde al pasar el mouse */
     transform: translateY(-5px); /* Eleva la celda al pasar el mouse */
+}
+
+/* Estilo para días ocupados */
+.dia-turno {
+    background-color: #ed6d78; /* Color rojo claro */
+    border: 2px solid #830404; /* Borde rojo */
+    color: #830404; /* Texto rojo */
+    animation: shake 0.8s ease-in-out;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Estilo para hover en días ocupados */
+.dia-turno:hover {
+    background-color: #ff0000; /* Rojo más intenso al hacer hover */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al hacer hover */
+}
+
+/* Evitar que los días normales afecten el hover de los días ocupados */
+.dia-turno:hover {
+    background-color: #ff0000; /* Mantener el color rojo más intenso */
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+    color: white; /* Cambiar el color del texto si es necesario */
 }
 
 /* Animaciones de entrada */
