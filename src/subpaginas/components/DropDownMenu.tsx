@@ -10,7 +10,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onLogout }) => {
     <div className="dropdown-menu">
       <ul>
         <li><a href="/perfil">Perfil</a></li>
-        <li><a href="/agendados">Mis turnos</a></li>
+        <li><a href="/misturnos">Mis turnos</a></li>
         <li><button onClick={onLogout}>Cerrar Sesión</button></li>
       </ul>
     </div>

@@ -1,0 +1,118 @@
+.contenedor-turnos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+    width: 98vw;
+    margin-top: 10%;
+  }
+  
+  .tarjeta {
+    background-color: #FFF1DC; /* Fondo crema */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: slideIn 0.8s ease;
+  }
+  
+  .tarjeta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tarjeta h3,
+  .tarjeta p {
+    margin: 10px 0;
+    font-family: 'Cabin Sketch', cursive;
+  }
+  
+  .tarjeta-reprobado {
+    background-color: #F8D7DA; /* Rojo claro */
+    border-left: 5px solid #830404; /* Rojo bordo */
+    animation: shake 0.8s ease-in-out;
+  }
+  
+  .tarjeta-enproceso {
+    background-color: #FFF3CD; /* Amarillo claro */
+    border-left: 5px solid #FFC107; /* Amarillo */
+    animation: pulse 1.2s infinite;
+  }
+  
+  .tarjeta-aprobado {
+    background-color: #D4EDDA; /* Verde claro */
+    border-left: 5px solid #28A745; /* Verde */
+    animation: bounce 1s ease-in-out;
+  }
+  
+  .turno-fecha {
+    font-size: 1.8rem;
+    color: #FF1493;
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(20px); }
+    to { transform: translateY(0); }
+  }
+  
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+  }
+  
+  /* Adaptabilidad para móviles */
+  @media (max-width: 768px) {
+    .contenedor-turnos {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .tarjeta {
+      width: 90vw; /* Ajustar el ancho de la tarjeta al 90% del viewport en móviles */
+      padding: 15px;
+    }
+  
+    .turno-fecha {
+      font-size: 1.5rem; /* Reducir el tamaño de fuente en móviles */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tarjeta {
+      width: 87vw; /* Ajustar el ancho de la tarjeta al 95% del viewport en pantallas más pequeñas */
+      padding: 10px;
+    }
+    .contenedor-turnos{
+        width: 90vw;
+        max-width: 90vw;
+    }
+  
+    .turno-fecha {
+      font-size: 1.3rem; /* Reducir aún más el tamaño de fuente en pantallas pequeñas */
+    }
+  }
+  

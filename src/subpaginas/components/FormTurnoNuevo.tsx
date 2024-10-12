@@ -14,6 +14,7 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
     const [descPersonal, setDescPersonal] = useState('');
+    const [mail, setMail] = useState(''); // Nuevo estado para el mail
     const [mostrarCamposPersonales, setMostrarCamposPersonales] = useState(true);
 
     // Verificamos el estado del token cuando el componente se monta
@@ -29,8 +30,8 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
 
         const token = localStorage.getItem('accessToken');
 
-        // Solo realizamos el POST si la sesión está iniciada
         if (token && token !== 'estoestavencido') {
+            // Si la sesión está iniciada, realizamos el POST a la URL de turnos
             const data = {
                 fecha: fecha ? fecha.toISOString().split('T')[0] : '',
                 hora,
@@ -39,7 +40,7 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
             };
 
             try {
-                const response = await fetch('https://oliver-six.vercel.app/perfil', {
+                const response = await fetch('https://oliver-six.vercel.app/turnos', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -50,6 +51,7 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
 
                 if (response.ok) {
                     console.log('Datos enviados con éxito');
+                    window.location.href = '/misturnos'; // Redirigir a la página de turnos
                 } else {
                     console.error('Error en la solicitud:', response.statusText);
                 }
@@ -57,7 +59,36 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
                 console.error('Error en la solicitud:', error);
             }
         } else {
-            console.log('Sesión no iniciada, no se enviarán los datos.');
+            // Si la sesión no está iniciada, hacemos el POST a turnos2 con los datos adicionales
+            const dataSinSesion = {
+                fecha: fecha ? fecha.toISOString().split('T')[0] : '',
+                hora,
+                motivo: motivo === 'otro' ? otroMotivo : motivo,
+                descripcion,
+                nombre,
+                apellido,
+                descripcionPersonal: descPersonal,
+                mail, // Añadimos el mail al cuerpo de la solicitud
+            };
+
+            try {
+                const response = await fetch('https://oliver-six.vercel.app/turnos2', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(dataSinSesion),
+                });
+
+                if (response.ok) {
+                    console.log('Datos enviados con éxito');
+                    window.location.href = '/misturnos'; // Redirigir a la página de turnos
+                } else {
+                    console.error('Error en la solicitud:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Error en la solicitud:', error);
+            }
         }
     };
 
@@ -144,6 +175,16 @@ const FormTurnoNuevo: React.FC<FormTurnoNuevoProps> = ({ fechaInicial }) => {
                             <textarea 
                                 value={descPersonal}
                                 onChange={(e) => setDescPersonal(e.target.value)} 
+                                required 
+                            />
+                        </div>
+                        <div className="form-group"> {/* Campo para el mail */}
+                            <label>Email:</label>
+                            <input 
+                                 type="text" 
+
+                                value={mail} 
+                                onChange={(e) => setMail(e.target.value)} 
                                 required 
                             />
                         </div>

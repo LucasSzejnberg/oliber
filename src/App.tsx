@@ -6,6 +6,7 @@ import TurnoNuevo from './subpaginas/TurnoNuevo'; // Asegúrate de importar Turn
 import InicioSesion from "./subpaginas/InicioSesion.tsx";
 import Registro from "./subpaginas/Registro.tsx";
 import Perfil from "./subpaginas/Perfil.tsx";
+import Misturnos from "./subpaginas/Misturnos.tsx";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<InicioSesion />} />
         <Route path="/register" element={<Registro />} />
         <Route path="/perfil" element={<Perfil />} />
+        <Route path="/misturnos" element={<Misturnos />} />
 
       </Routes>
     </Router>
