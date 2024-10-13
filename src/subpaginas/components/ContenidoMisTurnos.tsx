@@ -59,11 +59,11 @@ const ContenidoMisTurnos: React.FC = () => {
     <div className="contenedor-turnos">
       {turnos.map((turno) => (
         <div key={turno.id} className={`tarjeta ${getEstadoClase(turno.estado)}`}>
-          <p className="turno-fecha">Fecha: {turno.fecha}</p>
-          <p className="turno-hora">Hora: {turno.hora}</p>
-          <p className="turno-motivo">Motivo: {turno.motivo}</p>
-          <p className="turno-descripcion">Descripción: {turno.descripcion}</p>
-          <p className="turno-estado">Estado: {turno.estado}</p>
+          <h2 >Fecha: {turno.fecha}</h2>
+          <h4 className="disclaimer" >Hora: {turno.hora}</h4>
+          <h4 className="disclaimer">Motivo: {turno.motivo}</h4>
+          <h4 className="disclaimer">Descripción: {turno.descripcion}</h4>
+          <h4 className="disclaimer">Estado: {turno.estado}</h4>
         </div>
       ))}
     </div>

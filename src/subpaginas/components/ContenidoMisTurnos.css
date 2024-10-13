@@ -8,6 +8,13 @@
     width: 98vw;
     margin-top: 10%;
   }
+
+.turno-fecha{
+  font-family: 'Bold', system-ui; /* Tipografía más romántica */
+}
+.turno-hora{
+  font-family: 'Bold', system-ui; /* Tipografía más romántica */
+}
   
   .tarjeta {
     background-color: #FFF1DC; /* Fondo crema */
