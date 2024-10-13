@@ -7,6 +7,7 @@ import InicioSesion from "./subpaginas/InicioSesion.tsx";
 import Registro from "./subpaginas/Registro.tsx";
 import Perfil from "./subpaginas/Perfil.tsx";
 import Misturnos from "./subpaginas/Misturnos.tsx";
+import Administrador from "./subpaginas/Administrador.tsx";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/register" element={<Registro />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/misturnos" element={<Misturnos />} />
+        <Route path="/administrador" element={<Administrador />} />
 
       </Routes>
     </Router>
