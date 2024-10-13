@@ -1,0 +1,84 @@
+.tarjeta-turno {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+    border-left: 5px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta-turno:hover {
+    transform: scale(1.05);
+}
+
+.tarjeta-turno .info {
+    margin-bottom: 15px;
+}
+
+.tarjeta-turno .info h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.tarjeta-turno .info p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.tarjeta-turno .acciones {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.boton-aceptar, .boton-rechazar {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.boton-aceptar {
+    background-color: #4caf50;
+    color: white;
+}
+
+.boton-aceptar:hover {
+    background-color: #45a049;
+}
+
+.boton-rechazar {
+    background-color: #f44336;
+    color: white;
+}
+
+.boton-rechazar:hover {
+    background-color: #e53935;
+}
+
+/* Colores de borde según el estado del turno */
+.tarjeta-turno.pendiente {
+    border-left-color: #ffeb3b;
+}
+
+.tarjeta-turno.confirmado {
+    border-left-color: #4caf50;
+}
+
+.tarjeta-turno.rechazado {
+    border-left-color: #f44336;
+}
+
+/* Ocultar botones si el estado es confirmado o rechazado */
+.tarjeta-turno.confirmado .acciones,
+.tarjeta-turno.rechazado .acciones {
+    display: none;
+}

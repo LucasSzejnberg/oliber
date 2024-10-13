@@ -1,30 +1,28 @@
 import React, { useEffect, useState } from "react";
-
-// Define la interfaz del tipo Turno
+import './ContenidoAdministrador.css';
 interface Turno {
   id: number;
-  paciente: string;
+  nombre: string;
+  apellido: string;
   fecha: string;
   hora: string;
-  doctor: string;
+  motivo: string;
+  descripcion: string;
+  estado: string;
 }
 
 const ContenidoAdministrador: React.FC = () => {
-  const [turnos, setTurnos] = useState<Turno[]>([]); // Estado para almacenar los turnos
-  const [error, setError] = useState<string | null>(null); // Estado para almacenar errores
+  const [turnos, setTurnos] = useState<Turno[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
-  // Obtén el token de la memoria del navegador (localStorage)
-  const accessToken = localStorage.getItem("accessToken");
-
-  // Función para hacer el GET a todos_turnos con el token
+  // Fetch de los turnos
   useEffect(() => {
     const fetchTurnos = async () => {
+      const token = localStorage.getItem("accessToken");
       try {
         const response = await fetch("https://oliver-six.vercel.app/todos_turnos", {
-          method: "GET",
           headers: {
-            "Authorization": `Bearer ${accessToken}`,
-            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
           },
         });
 
@@ -32,65 +30,66 @@ const ContenidoAdministrador: React.FC = () => {
           throw new Error("Error al obtener los turnos");
         }
 
-        const data: Turno[] = await response.json();
-        setTurnos(data); // Almacena los turnos en el estado
+        const data: Turno[] = (await response.json())["data"];
+        setTurnos(data);
       } catch (err) {
         setError("Error al obtener los turnos");
       }
     };
 
     fetchTurnos();
-  }, [accessToken]);
+  }, []);
 
-  // Función para actualizar el estado del turno con el token
+  // Actualizar estado del turno
   const actualizarEstado = async (id: number, estado: string) => {
+    const token = localStorage.getItem("accessToken");
     try {
       const response = await fetch("https://oliver-six.vercel.app/actualizarestado", {
         method: "POST",
         headers: {
-          "Authorization": `Bearer ${accessToken}`,
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({
-          id: id,
-          estado: estado,
-        }),
+        body: JSON.stringify({ id, estado }),
       });
 
       if (!response.ok) {
-        throw new Error("Error al actualizar el estado del turno");
+        throw new Error("Error al actualizar el estado");
       }
 
-      // Actualiza el estado de los turnos después de aceptar o rechazar
+      // Actualizar el estado local después de enviar el post
       setTurnos((prevTurnos) =>
-        prevTurnos.filter((turno) => turno.id !== id)
+        prevTurnos.map((turno) =>
+          turno.id === id ? { ...turno, estado } : turno
+        )
       );
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      setError("Error al actualizar el estado");
     }
   };
 
   return (
     <div>
-      <h1>Administrador de Turnos</h1>
+      <h2>Administrar Turnos</h2>
       {error && <p>{error}</p>}
-      <div>
-        {turnos.length > 0 ? (
-          turnos.map((turno) => (
-            <div key={turno.id} style={{ border: "1px solid black", padding: "10px", margin: "10px" }}>
-              <p><strong>ID:</strong> {turno.id}</p>
-              <p><strong>Paciente:</strong> {turno.paciente}</p>
-              <p><strong>Fecha:</strong> {turno.fecha}</p>
-              <p><strong>Hora:</strong> {turno.hora}</p>
-              <p><strong>Doctor:</strong> {turno.doctor}</p>
-              <button onClick={() => actualizarEstado(turno.id, "aprobado")}>Aceptar</button>
-              <button onClick={() => actualizarEstado(turno.id, "rechazado")}>Rechazar</button>
-            </div>
-          ))
-        ) : (
-          <p>No hay turnos nuevos</p>
-        )}
-      </div>
+      {turnos.length === 0 && <p>No hay turnos disponibles.</p>}
+      {turnos.map((turno) => (
+        <div key={turno.id} className="tarjeta-turno">
+          <p><strong>Nombre:</strong> {turno.nombre}</p>
+          <p><strong>Apellido:</strong> {turno.apellido}</p>
+          <p><strong>Fecha:</strong> {turno.fecha}</p>
+          <p><strong>Hora:</strong> {turno.hora}</p>
+          <p><strong>Motivo:</strong> {turno.motivo}</p>
+          <p><strong>Descripción:</strong> {turno.descripcion}</p>
+          <p><strong>Estado:</strong> {turno.estado}</p>
+          <button onClick={() => actualizarEstado(turno.id, "aprobado")}>
+            Aceptar
+          </button>
+          <button onClick={() => actualizarEstado(turno.id, "rechazado")}>
+            Rechazar
+          </button>
+        </div>
+      ))}
     </div>
   );
 };
