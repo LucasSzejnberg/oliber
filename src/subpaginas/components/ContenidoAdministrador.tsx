@@ -23,7 +23,7 @@ const ContenidoAdministrador: React.FC = () => {
         const response = await fetch("https://oliver-six.vercel.app/todos_turnos", {
           headers: {
             Authorization: `Bearer ${token}`,
-          },
+          },   
         });
 
         if (!response.ok) {
@@ -44,7 +44,7 @@ const ContenidoAdministrador: React.FC = () => {
   const actualizarEstado = async (id: number, estado: string) => {
     const token = localStorage.getItem("accessToken");
     try {
-      const response = await fetch("https://oliver-six.vercel.app/actualizarestado", {
+      const response = await fetch("https://oliver-six.vercel.app/estado_turno", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -53,8 +53,13 @@ const ContenidoAdministrador: React.FC = () => {
         body: JSON.stringify({ id, estado }),
       });
 
+      console.log("confirmado");
       if (!response.ok) {
         throw new Error("Error al actualizar el estado");
+      }
+      if (response.ok) {
+        console.log("no hubo Error al actualizar el estado");
+        console.log(response);
       }
 
       // Actualizar el estado local después de enviar el post
@@ -82,7 +87,7 @@ const ContenidoAdministrador: React.FC = () => {
           <p><strong>Motivo:</strong> {turno.motivo}</p>
           <p><strong>Descripción:</strong> {turno.descripcion}</p>
           <p><strong>Estado:</strong> {turno.estado}</p>
-          <button onClick={() => actualizarEstado(turno.id, "aprobado")}>
+          <button onClick={() => actualizarEstado(turno.id, "confirmado")}>
             Aceptar
           </button>
           <button onClick={() => actualizarEstado(turno.id, "rechazado")}>

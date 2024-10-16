@@ -44,7 +44,7 @@ const ContenidoMisTurnos: React.FC = () => {
 
   const getEstadoClase = (estado: string) => {
     switch (estado) {
-      case 'reprobado':
+      case 'rechazado':
         return 'tarjeta-reprobado';
       case 'pendiente':
         return 'tarjeta-enproceso';
